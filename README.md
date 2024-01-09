@@ -9,3 +9,4 @@ E.G:
 Where n = 2; R(α) * 2 = 1.1283791670955126 therefore Math.PI * Math.pow(1.1283791670955126,2) = 4
 Where n = 6712; R(α) * 6712 = 3786.84048477254 therefore Math.PI * Math.pow(3786.84048477254,2) = 45050944
 
+We can conclude that every n * R(α) is increasing the circle by the next possible perfect square from n. 
