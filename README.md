@@ -13,4 +13,4 @@ Also of note; this can be used in a compound scenario:
 - $(\mathit{R}(\alpha) \times 17) + (\mathit{R}(\alpha) \times 220) = (\mathit{R}(\alpha) + 237)$
 We can conclude that $\mathit{R}(\alpha)\times\mathit{n}$ is increasing the circle by the next possible square of $\mathit{n}$. A nice fact, but otherwise unremarkable.
   
-The Formula should be: $\sqrt{\frac{1}{\Pi}}\times \mathit{n} = \mathit{n}^2$
+The Formula should be: $\Pi \times (\sqrt{\frac{1}{\Pi}}\times \mathit{n})^2 = \mathit{n}^2$
