@@ -1,4 +1,4 @@
-## Noting the unit circle equivalence 
+## Noting a unit circle equivalence 
 
 $\sqrt{\frac{1}{\Pi}}$ which equates out to a circle with radius of $	\approx 0.5641895835477563 Which will be referred to as $\mathit{R}(\alpha)$
 
