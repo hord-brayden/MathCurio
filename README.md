@@ -10,6 +10,6 @@ E.G.D: Where $\mathit{n}=6712$; $\mathit{R}(/alpha) \times 6712 = 3786.840484772
 Therefore $\Pi\times 3786.84048477254^2 = 45050944$
 
 Also of note; this can be used in a compound scenario: $(\mathit{R}(/alpha) \times 17) + (\mathit{R}(/alpha) \times 220) = (\mathit{R}(/alpha) + 237)$
-We can conclude that every n * R(α) is increasing the circle by the next possible square of n. A nice fact, but otherwise unremarkable.
+We can conclude that $\mathit{R}(/alpha)\times\mathit{n} $ is increasing the circle by the next possible square of $\mathit{n}$. A nice fact, but otherwise unremarkable.
 
 The Formula should be: $\sqrt{\frac{1}{\Pi}}\times \mathit{n} = \mathit{n}^2$
