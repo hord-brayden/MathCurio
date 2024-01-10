@@ -1,8 +1,8 @@
 ## Noting a unit circle equivalence 
 
-$\sqrt{\frac{1}{\pi}}$ which equates out to a circle with radius of $\approx 0.5641895835477563$ Which will be referred to as $\mathit{R}(\alpha)$
+$\sqrt{\frac{1}{\pi}}$ which equates out to be the radius $\approx 0.5641895835477563$, which will be referred to as $\mathit{R}(\alpha)$, of a circle( $\bigcirc$ ) of $Area = \pi$
 
-Upon further examination, one can continually extend the original radius of $\mathit{R}(\alpha)\times\mathit{n}$ to find the radius of $\bigcirc \mathit{n}^2$. Which can then be unfolded using the standard formula to find the area of a circle:
+Upon further examination, one can continually extend the original radius of $\mathit{R}(\alpha)\times\mathit{n}$ to find the $Area \bigcirc$ of $\mathit{n}^2$, by producing $\mathit{n}$'s radius. Which can then be unfolded using the standard formula to find the area of a circle:
 - $Area \bigcirc = \pi\times\mathit{R}(\alpha)^2$
 - E.G: Where $\mathit{n}=2$; $\mathit{R}(\alpha)\times 2 	\approx 1.1283791670955126$
 - Therefore $\pi\times 1.1283791670955126^2 = \bigcirc 4$ 
