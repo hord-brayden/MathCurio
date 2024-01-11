@@ -2,8 +2,12 @@
 // N = p * q; and r = (p-1)*(q-1);
 // Calculate numbers equivalent to 1 mod r. Or, (p-1)(q-1) + 1 ... 1+ r(inf).
 // -- Basically rolling over the odometer by 1 figure.
-// r will always end in 1, 3, 5, or 7 so != r % 2
-// Using a result of 1 mod r; or K= 1 + mod(p-1)(q-1), Factor K: K!
+// r will always end in 1, 3, 5, or 7 so != r % 2, could end in 0. R WILL NEVER BE PRIME
+// Using a result of 1 mod r; or K = any number that is 1 + mod(p-1)(q-1), Factor K: K! ; K WILL NEVER BE PRIME
+// Using 2 major factors of K, which will be called 'e' and 'd', perform e * d mod r which should equal 1. e*d mod r = 1. Both e and r should be relatively prime to r, independently
+// using e and d, send and decrypt messages using these formuli: 
+// Cipher = (Msg)e mod N
+// Msg = (Cipher)d mod N
 /* Copying from https://www.cs.drexel.edu/~popyack/IntroCS/HW/RSAWorksheet.html */
 /* 
 <!-- Hide from uneducated browsers
