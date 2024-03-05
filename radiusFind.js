@@ -3,4 +3,5 @@ function findUnitCircle(circleRadius){
     // typically equates to the radius squared
     var sqPi = Math.sqrt(1/Math.PI);
     var areaCheck = Math.PI * Math.pow((sqPi * circleRadius), 2)
+    return areaCheck;
 }
