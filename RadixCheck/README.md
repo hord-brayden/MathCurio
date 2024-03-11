@@ -1,6 +1,6 @@
-##Small project of mine using **whole numbered radix modulo operators** to determine which base has the most prime isolation per residue class. 
+# Small project of mine using **whole numbered radix modulo operators** to determine which base has the most prime isolation per residue class. 
 
-###Notes###
+## Notes ##
 - Any prime numbered residue class will contain only * *1 vein* * that is not prime, due to self-rendered primality
 - A **vein** is described as containing primes when those primes are > 5.
 - Non-Prime Odd numbers typically underperform quite extensively, if the goal is to isolate primes into the minimal amount of veins possible. I've listed a few here in the table to illustrate their underperforming characteristics.
