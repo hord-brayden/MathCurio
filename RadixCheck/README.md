@@ -9,6 +9,7 @@ Will Update the following with a list of the bases in question, in addition to t
 
 | Radix (Expressed in Modulo Base) | Prime Veins | % of residue classes contain primes | 
 | :--- | :---: | ---: |
+| base<sub>**210**</sub> | *49 veins* | 23.33% of all residue classes will be contain primes. Inversely, 76.66% of all residue classes will never contain a prime.|
 | base<sub>**78**</sub> | *24 veins* | 30.76% of all residue classes will be contain primes. Inversely, 69.24% of all residue classes will never contain a prime.|
 | base<sub>**52**</sub> | *24 veins* | 46.15% of all residue classes will be contain primes. Inversely, 53.85% of all residue classes will never contain a prime.|
 | base<sub>**50**</sub> | *22 veins* | 44% of all residue classes will be contain primes. Inversely, 56% of all residue classes will never contain a prime.|
