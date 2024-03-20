@@ -66,10 +66,10 @@ function checkResidueClass(numbers, modulus, modifiers) {
     
     return classes;
 }
-// accepts a starting mod to begin checking, and a modStop with which to stop checking.
-function autoRunResidueClass(startMod, stopMod) {
+// accepts a starting mod to begin checking, and a modStop with which to stop checking, as well as how long to run the number sequence.
+function autoRunResidueClass(startMod, stopMod, primeLength) {
 // change array value for what numbers are run against primes to build out prime veins. 6 is set as the starting value.
-    let numbersSeq =  [...Array(10000).keys()].slice(6);
+    let numbersSeq =  [...Array(primeLength).keys()].slice(6);
     let primeDisplayCompoundArray = [true,null,true];
     let finalCounts = [];
     for (i = startMod;i < stopMod;i++){
@@ -89,5 +89,5 @@ function autoRunResidueClass(startMod, stopMod) {
     return finalCounts
 }
 
-let finalAnswer = autoRunResidueClass(15,1500);
+let finalAnswer = autoRunResidueClass(15,1500,10000);
 console.log(finalAnswer);
