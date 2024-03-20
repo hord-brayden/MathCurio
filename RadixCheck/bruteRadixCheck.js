@@ -25,7 +25,7 @@ while (value) {
 return sum;
 }
 
-function checkResidueClass(numbers, modulus, modifiers) {
+function checkResidueClass(numbers, modulus, modifiers, digitSum) {
     let classes = generateResidueClasses(modulus);
     numbers.forEach(number => {
         let residue = number % modulus;
@@ -70,10 +70,11 @@ function checkResidueClass(numbers, modulus, modifiers) {
 function autoRunResidueClass(startMod, stopMod, primeLength) {
 // change array value for what numbers are run against primes to build out prime veins. 6 is set as the starting value.
     let numbersSeq =  [...Array(primeLength).keys()].slice(6);
-    let primeDisplayCompoundArray = [true,null,true];
+    let primeDisplayCompoundArray = [true,null,true];\
+    let digitSum = false;
     let finalCounts = [];
     for (i = startMod;i < stopMod;i++){
-        let modCheck = checkResidueClass(numbersSeq, i, primeDisplayCompoundArray);
+        let modCheck = checkResidueClass(numbersSeq, i, primeDisplayCompoundArray, digitSum);
         let count = 0;
         for (let key in modCheck) {
             if (Array.isArray(modCheck[key]) && modCheck[key].length > 0) {
