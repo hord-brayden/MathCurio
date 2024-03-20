@@ -25,7 +25,7 @@ while (value) {
 return sum;
 }
 
-function checkResidueClass(numbers, modulus, modifiers, digitSum) {
+function checkResidueClass(numbers, modulus, modifiers, digitSummer) {
     let classes = generateResidueClasses(modulus);
     numbers.forEach(number => {
         let residue = number % modulus;
@@ -33,7 +33,7 @@ function checkResidueClass(numbers, modulus, modifiers, digitSum) {
             classes[residue] = [];
         }
         if (isPrime(number)) {
-            if (digitSum == true && modifiers[2] == true) {
+            if (digitSummer == true && modifiers[2] == true) {
                 classes[residue].push(digitSum(number) + 'p');
             }
             else if (modifiers[2] == true) {
@@ -43,7 +43,7 @@ function checkResidueClass(numbers, modulus, modifiers, digitSum) {
                 classes[residue].push(number);
             }
         } else if (modifiers[1] !== null){
-            if (digitSum == true) {
+            if (digitSummer == true) {
                 if (modifiers[0] == true) {
                     classes[residue].push(modifiers[1]);
                 }
