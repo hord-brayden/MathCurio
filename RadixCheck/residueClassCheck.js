@@ -25,7 +25,7 @@ while (value) {
 return sum;
 }
 
-function checkResidueClass(numbers, modulus, modifiers) {
+function checkResidueClass(numbers, modulus, modifiers, digitSum) {
     let classes = generateResidueClasses(modulus);
     numbers.forEach(number => {
         let residue = number % modulus;
@@ -79,7 +79,7 @@ function checkResidueClass(numbers, modulus, modifiers) {
 let numbersSeq = [...Array(10000).keys()]
 let primeDisplayCompoundArray = [true,null,true];
 let mod = 78;
-let result = checkResidueClass(numbersSeq, mod, primeDisplayCompoundArray);
+let result = checkResidueClass(numbersSeq, mod, primeDisplayCompoundArray, true);
 // unpackaged vein % summary breakdown selector
 let veinBreakdownSimple = true
 if (veinBreakdownSimple !== true) { 
