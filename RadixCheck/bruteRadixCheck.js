@@ -70,7 +70,7 @@ function checkResidueClass(numbers, modulus, modifiers, digitSummer) {
 function autoRunResidueClass(startMod, stopMod, primeLength) {
 // change array value for what numbers are run against primes to build out prime veins. 6 is set as the starting value.
     let numbersSeq =  [...Array(primeLength).keys()].slice(6);
-    let primeDisplayCompoundArray = [true,null,true];\
+    let primeDisplayCompoundArray = [true,null,true];
     let digitSum = false;
     let finalCounts = [];
     for (i = startMod;i < stopMod;i++){
