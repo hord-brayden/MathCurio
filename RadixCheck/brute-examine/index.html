@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <style>
+            html * {
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+
+            .main-div {
+                background-color: tomato;
+            }
+
+            #output-div p {
+                padding: 0 !important;
+                margin: 0 2em !important;
+                font-size: 10px;
+            }
+
+            .content div {
+                font-size: 8px;
+                overflow-x: overlay;
+                width: 2000%;
+            }
+
+            .collapsible {
+                cursor: pointer;
+                padding: 5px;
+                width: 100%;
+                border: none;
+                text-align: left;
+                outline: none;
+                font-size: 15px;
+            }
+
+            .active, .collapsible:hover {
+                background-color: aqua;
+            }
+
+            button.collapsible {
+                background-color: aquamarine;
+                border: 1px solid black;
+            }
+
+            .content {
+                padding: 0 18px;
+                display: none;
+                overflow: hidden;
+                background-color: #f1f1f1;
+            }
+        </style>
+        <title>Brute Residue Output</title>
+    </head>
+    <body>
+        <div class="" id="">
+            <h1>
+                Brute Check
+            </h1>
+        </div>
+        <div class="main-div" id="">
+            <p class="" id="">
+                <h4>Breakout of Residue Classes</h4>
+                <button id="overflow-width">Toggle Width</button>
+                <span class="" >
+
+                </span>
+            </p>
+            <div id="output-div"></div>
+        </div>
+        <div></div>
+    </body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const overflowButton = document.getElementById("overflow-width");
+            overflowButton.addEventListener("click", function() {
+                const contentDivs = document.querySelectorAll(".content div");
+                contentDivs.forEach(function(div) {
+                    if (div.style.width === "100%") {
+                        div.style.width = "2000%";
+                    } else {
+                        div.style.width = "100%";
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="residueBrute.js"></script>
+</html>
