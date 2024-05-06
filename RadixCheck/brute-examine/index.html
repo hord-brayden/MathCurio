@@ -5,20 +5,28 @@
                 font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             }
 
+            body h1 {
+                text-align: center;
+                padding: 9px 0em;
+                font-size: -webkit-xxx-large;
+                text-decoration-line: underline;
+            }
+
             .main-div {
                 background-color: tomato;
+                padding: 0em 1%;
             }
 
             #output-div p {
-                padding: 0 !important;
-                margin: 0 2em !important;
-                font-size: 10px;
+                padding: 8px 0em !important;
+                margin: 0em !important;
+                font-size: medium;
             }
 
             .content div {
                 font-size: 8px;
                 overflow-x: overlay;
-                width: 2000%;
+                width: max-content;
             }
 
             .collapsible {
@@ -41,11 +49,30 @@
             }
 
             .content {
-                padding: 0 18px;
+                padding: 10px 18px;
                 display: none;
-                overflow: hidden;
+                overflow: scroll;
                 background-color: #f1f1f1;
             }
+
+            .subset-parent {
+                display: flex;
+                margin: 1em 20em;
+            }
+
+            .subset-parent div {
+                margin: 0 10%;
+            }
+
+            .main-div-child {
+                margin: 1em 25%;
+                padding: 2em 0;
+            }
+
+            .main-div-child h2 {
+                text-align: center;
+            }
+
         </style>
         <title>Brute Residue Output</title>
     </head>
@@ -55,10 +82,9 @@
                 Brute Check
             </h1>
         </div>
-        <div class="main-div" id="">
-            <p class="" id="">
-                <h4>Breakout of Residue Classes</h4>
-                <p>
+        <div class="main-div">
+            <div class="main-div-child">
+                <h2>Breakout of Residue Classes</h2>
                     This is my proprietary prime number, residue checking mechanism. Currently this performs the following functions: 
                     <ul>
                         <li>Outputs the residue classes for each modulo, that contain prime numbers</li>
@@ -66,7 +92,9 @@
                         <li>Sorts the results in ascending order, meaning the most efficacious bases are presented first. Efficacious meaning, the lowest number of residue classes that contain prime numbers</li>
                         <li>in the future - will provide a compound assessment of various Modulo oriented residue classes that can be utilized to determined primality without factorization</li>
                     </ul>
-                </p>
+                </div>
+            <div class="subset-div subset-parent">
+            <div class="modulo-controls subset-div">
                 <p>
                     <h3>Use the following functionality to alter the results.</h3>
                     <label for="startMod">At what modulus should the calculation begin? (integer):</label><br>
@@ -78,10 +106,18 @@
                     <button id="runAnalysis">Run analysis</button>
                 </p>
                 <button id="overflow-width">Toggle Width</button>
-                <span class="" >
-
-                </span>
-            </p>
+            </div>
+            <div class="digitsum-controls subset-div">
+                <h3>Digitsum Converter</h3>
+                <p>To get the value of a digitsum in a given base/modulus use the calculator below</p>
+                <label for="modulusBase">What base should the Digitsum be checked in? (integer):</label><br>
+                <input type="number" id="modulusBase" name="modulusBase" required minlength="1" maxlength="7" size="10" /><br>
+                <label for="digitsumNum">What number do you want the digitsum for, in the given base? (integer):</label><br>
+                <input type="number" id="digitsumNum" name="digitsumNum" required minlength="1" maxlength="7" size="10" /><br>
+                <button id="calculateButton">Calculate Digitsum</button>
+                <div id="digitSum-Output"></div>
+            </div>
+        </div>
             <div id="output-div"></div>
         </div>
         <div></div>
@@ -92,13 +128,25 @@
             overflowButton.addEventListener("click", function() {
                 const contentDivs = document.querySelectorAll(".content div");
                 contentDivs.forEach(function(div) {
-                    if (div.style.width === "100%") {
-                        div.style.width = "2000%";
+                    if (div.style.width === "fit-content") {
+                        div.style.width = "max-content";
                     } else {
-                        div.style.width = "100%";
+                        div.style.width = "fit-content";
                     }
                 });
             });
+        });
+
+        document.getElementById('calculateButton').addEventListener('click', function() {
+            var base = parseInt(document.getElementById('modulusBase').value, 10);
+            var num = parseInt(document.getElementById('digitsumNum').value, 10);
+
+            if (isNaN(base) || isNaN(num)) {
+                document.getElementById('digitSum-Output').innerText = 'Please enter valid numbers for both fields.';
+            } else {
+                var result = digitSum(num, base);
+                document.getElementById('digitSum-Output').innerText = 'Digitsum is: ' + result;
+            }
         });
 
         document.getElementById('runAnalysis').addEventListener('click', function() {
@@ -119,7 +167,6 @@
 
             // Call the function with inputs
             autoRunResidueClass(startMod, stopMod, primeLength).forEach(result => {
-                // Assuming you want to print the final answer to the console as well
                 console.log(result);
             });
         });
