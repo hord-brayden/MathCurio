@@ -76,11 +76,17 @@ function isPrime(num) {
     return true;
 }
 
-function digitSum(value) {
+function digitSum(value, base) {
 sum = 0;
 while (value) {
-    sum += value % 10;
-    value = Math.floor(value / 10);
+    if (base === null) {
+        base = 10;
+        sum += value % 10;
+    }
+    else {
+        sum += value % base;
+    }
+    value = Math.floor(value / base);
 }
 return sum;
 }
