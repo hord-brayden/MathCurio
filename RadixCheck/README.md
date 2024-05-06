@@ -65,3 +65,6 @@ Will Update the following with a list of the bases in question, in addition to t
     - Mod 36 ~ Residue Class 5 (?)
 - So there is some kind of link there.
 With specific bases such as base 90, there exists a link between all bases that share  
+
+### Raw Inspection
+Here's the output of one of the runs: [Raw Output File](rawoutput.html)
