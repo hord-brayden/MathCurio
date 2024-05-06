@@ -128,12 +128,12 @@ function checkResidueClass(numbers, modulus, modifiers, digitSummer) {
 }
 // accepts a starting mod to begin checking, and a modStop with which to stop checking, as well as how long to run the number sequence.
 function autoRunResidueClass(startMod, stopMod, primeLength) {
-// change array value for what numbers are run against primes to build out prime veins. 6 is set as the starting value.
-    let numbersSeq =  [...Array(primeLength).keys()].slice(6);
-    let primeDisplayCompoundArray = [true,null,true];
+    let numbersSeq = [...Array(primeLength).keys()].slice(6);
+    let primeDisplayCompoundArray = [true, null, true];
     let digitSum = false;
-    let finalCounts = [];
-    for (i = startMod;i < stopMod;i++){
+    let results = [];  // Store results before sorting and appending
+
+    for (let i = startMod; i < stopMod; i++) {
         let modCheck = checkResidueClass(numbersSeq, i, primeDisplayCompoundArray, digitSum);
         let count = 0;
         for (let key in modCheck) {
@@ -141,22 +141,32 @@ function autoRunResidueClass(startMod, stopMod, primeLength) {
                 count++;
             }
         }
-        let outputModCheck = true;
-        let lowGranVeinCount = 'Prime Veins for ' + i + ' is : ' + count;
-        let veinEfficacy = 'Prime Vein efficacy is ' + (count/i) * 100 + '%';
-        if (outputModCheck = true) {
-            console.log(modCheck );
-            addElement(lowGranVeinCount, veinEfficacy, modCheck);
-        }
-        else {
-            addElement(lowGranVeinCount, veinEfficacy);
-        }
-        // currently just inserts prime efficiencies into an empty array, then sorts them in ascending order to demonstrate the highest prime vein efficiency possibile given the mod range, and prime vein contents.
-        finalCounts.push(count/i);
-        finalCounts.sort();
+
+        let lowGranVeinCount = 'Prime Veins for ' + i + ' is: ' + count;
+        let efficacy = (count / i) * 100;
+        let veinEfficacy = 'Prime Vein efficacy is ' + efficacy + '%';
+        
+        // make a new object of the entire result object for sorting and later processing
+        results.push({
+            modCheck: modCheck,
+            lowGranVeinCount: lowGranVeinCount,
+            veinEfficacy: veinEfficacy,
+            efficacy: efficacy  // for sorting
+        });
     }
-    return finalCounts
+
+    // currently just inserts prime efficiencies into an empty array, then sorts them in ascending order to demonstrate the highest prime vein efficiency possibile given the mod range, and prime vein contents.
+    // also sorts ascending
+    results.sort((a, b) => a.efficacy - b.efficacy);
+
+    // Now append sorted results to the DOM
+    results.forEach(result => {
+        addElement(result.lowGranVeinCount, result.veinEfficacy, result.modCheck);
+    });
+
+    // Return the sorted efficacy messages for logging or other purposes
+    return results.map(item => `Modulus ${item.modCheck.modulus}, Efficacy: ${item.efficacy.toFixed(2)}%`);
 }
 
-let finalAnswer = autoRunResidueClass(4,150,10000);
+let finalAnswer = autoRunResidueClass(4, 150, 10000);
 console.log(finalAnswer);

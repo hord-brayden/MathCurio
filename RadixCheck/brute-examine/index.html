@@ -58,6 +58,25 @@
         <div class="main-div" id="">
             <p class="" id="">
                 <h4>Breakout of Residue Classes</h4>
+                <p>
+                    This is my proprietary prime number, residue checking mechanism. Currently this performs the following functions: 
+                    <ul>
+                        <li>Outputs the residue classes for each modulo, that contain prime numbers</li>
+                        <li>Takes the # of residue classes that have primes inserted, and divides the modulo to produce what the 'Efficacy' of a given modulo is for determine prime number assignment</li>
+                        <li>Sorts the results in ascending order, meaning the most efficacious bases are presented first. Efficacious meaning, the lowest number of residue classes that contain prime numbers</li>
+                        <li>in the future - will provide a compound assessment of various Modulo oriented residue classes that can be utilized to determined primality without factorization</li>
+                    </ul>
+                </p>
+                <p>
+                    <h3>Use the following functionality to alter the results.</h3>
+                    <label for="startMod">At what modulus should the calculation begin? (integer):</label><br>
+                    <input type="number" id="startMod" name="startMod" required minlength="1" maxlength="7" size="10" /><br>
+                    <label for="stopMod">At what modulus should the calculation stop? (integer):</label><br>
+                    <input type="number" id="stopMod" name="stopMod" required minlength="1" maxlength="7" size="10" /><br>
+                    <label for="primeLength">To run the analysis, it is also required to set the values which will be run for each modulo. Typically, I've stuck with 10000 to avoid excess compute but you can insert a number to which the program will factor: (integer)</label><br>
+                    <input type="number" id="primeLength" name="primeLength" required minlength="1" maxlength="7" size="10" />
+                    <button id="runAnalysis">Run analysis</button>
+                </p>
                 <button id="overflow-width">Toggle Width</button>
                 <span class="" >
 
@@ -81,6 +100,30 @@
                 });
             });
         });
+
+        document.getElementById('runAnalysis').addEventListener('click', function() {
+            // Get the values from the input fields
+            const startMod = parseInt(document.getElementById('startMod').value, 10);
+            const stopMod = parseInt(document.getElementById('stopMod').value, 10);
+            const primeLength = parseInt(document.getElementById('primeLength').value, 10);
+
+            // Validate input values
+            if (isNaN(startMod) || isNaN(stopMod) || isNaN(primeLength)) {
+                alert("Please enter valid integers for all fields.");
+                return;
+            }
+
+            // Clear previous output
+            const outputDiv = document.getElementById('output-div');
+            outputDiv.innerHTML = '';
+
+            // Call the function with inputs
+            autoRunResidueClass(startMod, stopMod, primeLength).forEach(result => {
+                // Assuming you want to print the final answer to the console as well
+                console.log(result);
+            });
+        });
+
     </script>
     <script src="residueBrute.js"></script>
 </html>
