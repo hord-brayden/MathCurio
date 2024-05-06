@@ -5,6 +5,13 @@
 - A **vein** is described as containing primes when those primes are > 5.
 - Non-Prime Odd numbers typically underperform quite extensively, if the goal is to isolate primes into the minimal amount of veins possible. I've listed a few here in the table to illustrate their underperforming characteristics.
 
+## Simulation
+Use the follow files together to produce a working toolsheet.
+[Javascript File](brute-examine/residueBrute.js)
+[HTML index File](brute-examine/index.html)
+
+After you've downloaded both, place them in the same directory and launch the index.html in a browser window to begin. There are some simple inputs that can be used to determine digitsums in a given base and re-run the calculation with your own metrics and modulo systems with integer input.
+
 Will Update the following with a list of the bases in question, in addition to their 'veins' of primes to determine a convergence at which a specific integer returns the most useful residue class configuration for a prime-counting/guessing function.
 
 | Radix (Expressed in Modulo Base) | Prime Veins | % of residue classes contain primes | 
@@ -37,3 +44,21 @@ Will Update the following with a list of the bases in question, in addition to t
 | base<sub>**8**</sub> | *4 veins* | 50% of all residue classes will contain primes.  Inversely, 50% of all residue classes will never contain a prime.|
 | base<sub>**6**</sub> | *2 veins* | 33.33% of all residue classes will contain primes.  Inversely, 67% of all residue classes will never contain a prime.|
 | base<sub>**4**</sub> | *2 veins* | 50% of all residue classes will contain primes.  Inversely, 50% of all residue classes will never contain a prime.|
+
+
+
+## Examinations and Findings
+- All bases that have 3 as a primary factor (30, 60, 90, 120, 150) typically perform better than bases with a primary factor of 2, or 5.
+- There exists some shared primality between these factors
+  - *For example: The prime number 1913*
+    - Mod 30 ~ Residue Class 23
+    - Mod 60 ~ Residue Class 53 (30 + 23?)
+    - Mod 90 ~ Residue Class 23
+    - Mod 120 ~ Residue Class 113 (90 + 23?)
+    - Mod 126 ~ Residue Class 23
+    - Mod 84 ~ Residue Class 65 (?)
+    - Mod 42 ~ Residue Class 23
+    - Mod 24 ~ Residue Class 17 (would have expected class 23)
+    - Mod 36 ~ Residue Class 5 (?)
+- So there is some kind of link there.
+With specific bases such as base 90, there exists a link between all bases that share  
