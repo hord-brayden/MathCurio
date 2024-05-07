@@ -63,7 +63,7 @@ Will Update the following with a list of the bases in question, in addition to t
     - Mod 42 ~ Residue Class 23
     - Mod 24 ~ Residue Class 17 (would have expected class 23)
     - Mod 36 ~ Residue Class 5 (?)
-- So there is some kind of link there.
+- So there is some kind of link there. It most likely has to do with the prime factorization of these numbers, namely the most efficacious numbers share 2, 3, and 5 as prime factors. Whereas when another factor can become involved, which the next prime number would be 7, the numbers become significantly more effective; which is the case for 420, 630, and 840.
 With specific bases such as base 90, there exists a link between all bases that share  
 
 ### Raw Inspection
