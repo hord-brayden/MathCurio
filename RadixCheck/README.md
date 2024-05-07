@@ -21,6 +21,7 @@ Will Update the following with a list of the bases in question, in addition to t
 | base<sub>**420**</sub> | *97 veins* | 23.09% of all residue classes will be contain primes. Inversely, 76.91% of all residue classes will never contain a prime.|
 | base<sub>**210**</sub> | *49 veins* | 23.33% of all residue classes will be contain primes. Inversely, 76.66% of all residue classes will never contain a prime.|
 | base<sub>**78**</sub> | *24 veins* | 30.76% of all residue classes will be contain primes. Inversely, 69.24% of all residue classes will never contain a prime.|
+| base<sub>**60**</sub> | *16 veins* | 26.66% of all residue classes will be contain primes. Inversely, 73.33% of all residue classes will never contain a prime.|
 | base<sub>**52**</sub> | *24 veins* | 46.15% of all residue classes will be contain primes. Inversely, 53.85% of all residue classes will never contain a prime.|
 | base<sub>**50**</sub> | *22 veins* | 44% of all residue classes will be contain primes. Inversely, 56% of all residue classes will never contain a prime.|
 | base<sub>**48**</sub> | *16 veins* | 33.33% of all residue classes will be contain primes. Inversely, 67% of all residue classes will never contain a prime.|
@@ -64,7 +65,12 @@ Will Update the following with a list of the bases in question, in addition to t
     - Mod 24 ~ Residue Class 17 (would have expected class 23)
     - Mod 36 ~ Residue Class 5 (?)
 - So there is some kind of link there. It most likely has to do with the prime factorization of these numbers, namely the most efficacious numbers share 2, 3, and 5 as prime factors. Whereas when another factor can become involved, which the next prime number would be 7, the numbers become significantly more effective; which is the case for 420, 630, and 840.
-With specific bases such as base 90, there exists a link between all bases that share  
+With specific bases such as base 90, there exists a link between all bases that share
+- TO reference up above, it has indeed been proven to determine that there is a causal link between prime core factors being related to the density of prime isolated residue classes.
+- Example:
+  - 2 * 3 = 12; wherein base 12 has 7 % more prime-dense 'veins' than base 10. (33% as opposed to 40% respectively)
+  - 2 * 3 * 5 = 60; wherein base 60 has 13.33% more prime-dense 'veins' than base 10. (26.66% as opposed to 40% respectively)
+  - 2 * 3 * 5 * 7 = 420;
 
 ### Raw Inspection
 Here's the output of one of the runs: [Raw Output File](rawoutput.html)
