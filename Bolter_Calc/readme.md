@@ -84,7 +84,8 @@ for diameter in diameters_inches:
 df = pd.DataFrame(data, columns=['Diameter (inches)', 'Diameter (meters)', 'Mass (kg)', 'Acceleration (m/s²)', 'Force (N)'])
 
 # Display DataFrame
-import ace_tools as tools; tools.display_dataframe_to_user(name="Force Calculation Table", dataframe=df)
+print(df)
+
 ```
 
-This script will produce a table that calculates the acceleration and force for various diameters and weights, allowing you to see how these values change with different parameters.
+This script will produce a table that calculates the acceleration and force for various diameters and weights. I also put in a ballistic calculator for ease of use with standard ballistomatics
