@@ -54,7 +54,7 @@
                 overflow: scroll;
                 background-color: #f1f1f1;
             }
-
+            /* 
             .subset-parent {
                 display: flex;
                 margin: 1em 20em;
@@ -68,7 +68,10 @@
                 margin: 1em 25%;
                 padding: 2em 0;
             }
-
+            */
+            div#residueClass-Output {
+                font-size: 12px;
+            }
             .main-div-child h2 {
                 text-align: center;
             }
@@ -98,9 +101,9 @@
                 <p>
                     <h3>Use the following functionality to alter the results.</h3>
                     <label for="startMod">At what modulus should the calculation begin? (integer):</label><br>
-                    <input type="number" id="startMod" name="startMod" required minlength="1" maxlength="7" size="10" /><br>
+                    <input type="number" id="startMod" name="startMod" value="5" required minlength="1" maxlength="7" size="10" /><br>
                     <label for="stopMod">At what modulus should the calculation stop? (integer):</label><br>
-                    <input type="number" id="stopMod" name="stopMod" required minlength="1" maxlength="7" size="10" /><br>
+                    <input type="number" id="stopMod" name="stopMod" value="2310" required minlength="1" maxlength="7" size="10" /><br>
                     <label for="primeLength">To run the analysis, it is also required to set the values which will be run for each modulo. Typically, I've stuck with 10000 to avoid excess compute but you can insert a number to which the program will factor: (integer)</label><br>
                     <input type="number" id="primeLength" name="primeLength" required minlength="1" maxlength="7" size="10" />
                     <button id="runAnalysis">Run analysis</button>
@@ -116,6 +119,21 @@
                 <input type="number" id="digitsumNum" name="digitsumNum" required minlength="1" maxlength="7" size="10" /><br>
                 <button id="calculateButton">Calculate Digitsum</button>
                 <div id="digitSum-Output"></div>
+            </div>
+            <div class="subset-div subset-parent">
+                <div class="residue-class-controls subset-div">
+                    <h3>Residue Class Calculator</h3>
+                    <p>Enter a number and check its residue class in all declared bases</p>
+                    <label for="residueNumber">Number to check residue classes for (integer):</label><br>
+                    <input type="number" id="residueNumber" name="residueNumber" required minlength="1" maxlength="7" size="10" /><br>
+                    <button id="residueClassButton">Check Residue Classes</button>
+                    <p>The results will be formatted as CSV records,(Output being X, Y, Z) which correlate to:</p>
+                    <p>X = Base, meaning what base is being used in the residue class check</p>
+                    <p>Y = Number being checked, against the base to determine what modulo</p>
+                    <p>Z = What Residue class Y falls into, when expressed in base X</p>
+                    <p>Once you've clicked on the 'Check Residue Class' button above, a container will appear below this message, "Residue Classes for X" where X is what int you've entered above. Clicking on the icon that appears below this message, will expand the output and give you the results.</p>
+                    <div id="residueClass-Output"></div>
+                </div>
             </div>
         </div>
             <div id="output-div"></div>

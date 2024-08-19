@@ -26,7 +26,9 @@ function createCollapsibleElement(container, key, value) {
     let contentDiv = document.createElement("div");
     contentDiv.className = "content";
 
-    if (typeof value === "object" && value !== null && !(value instanceof Array)) {
+    if (typeof value === "string") {
+        contentDiv.innerHTML = value; // Set innerHTML for HTML content
+    } else if (typeof value === "object" && value !== null && !(value instanceof Array)) {
         let index = 0;
         for (let [subKey, subValue] of Object.entries(value)) {
             let line = document.createElement("div");
@@ -173,6 +175,37 @@ function autoRunResidueClass(startMod, stopMod, primeLength) {
     // Return the sorted efficacy messages for logging or other purposes
     return results.map(item => `Modulus ${item.modCheck.modulus}, Efficacy: ${item.efficacy.toFixed(2)}%`);
 }
+
+function checkResidueClassesForNumber(number, startMod, stopMod) {
+    let results = [];
+
+    for (let i = startMod; i <= stopMod; i++) {
+        let residue = number % i;
+        results.push(`${i}, ${number}, ${residue}<br>`);
+    }
+
+    return results.join(''); // Join into a single string with all results
+}
+
+// Event listener for the residue class button
+document.getElementById('residueClassButton').addEventListener('click', function() {
+    const number = parseInt(document.getElementById('residueNumber').value, 10);
+    const startMod = parseInt(document.getElementById('startMod').value, 10);
+    const stopMod = parseInt(document.getElementById('stopMod').value, 10);
+
+    if (isNaN(number) || isNaN(startMod) || isNaN(stopMod)) {
+        alert("Please enter valid integers for all fields.");
+        return;
+    }
+
+    const outputDiv = document.getElementById('residueClass-Output');
+    outputDiv.innerHTML = '';
+
+    const results = checkResidueClassesForNumber(number, startMod, stopMod);
+    let collapsibleDiv = document.createElement('div');
+    createCollapsibleElement(collapsibleDiv, `Residue classes for ${number}`, results);
+    outputDiv.appendChild(collapsibleDiv);
+});
 
 let finalAnswer = autoRunResidueClass(4, 150, 10000);
 console.log(finalAnswer);
