@@ -79,5 +79,12 @@ With specific bases such as base 90, there exists a link between all bases that 
   - 2 * 3 * 5 * 7 * 11 * 13 * 17 * 19 = 9699690;
   - 2 * 3 * 5 * 7 * 11 * 13 * 17 * 19 * 23 = 223092870;
   - 2 * 3 * 5 * 7 * 11 * 13 * 17 * 19 * 23 * 29 = 6469693230;
+ 
+## Current Progress
+In running some other simple tests, I'm finding that there is some correlation here and perhaps some merit. For example, I am inputting various numbers that *could* be prime given it's base-10 expression (Ending in a 1,3,7, or 9), gathering all of that number's particular residue classes (using the form field to gather those up on the main index.html) and examining that for a few things:
+1. If there are any values in the residue classes that are 0, then it's clearly not prime. This is because a 0 is effectively the N-base expression for N * (N^n) where n is whatever power the residue class represents. Given that it's compound, it'd be impossible to be prime. Example being, 432871 which after scouring the residue class output, 17 has this figure represented as 0. 17 is a factor of 432871, so therefore cannot be prime.
+2. Additionally, looking visually at each of the *vein-breakouts* to see if that value when represented in a given base, is inside of an empty vein. Using the previous example of 432871, when expressed in base629 falls into residue class 119. Residue class 119 in Base629 is devoid of any prime factors up to 1,000,000, therefore 432871 cannot be prime.
+3. 
+
 ### Raw Inspection
 Here's the output of one of the runs: [Raw Output File](output.html)
