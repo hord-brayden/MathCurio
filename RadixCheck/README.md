@@ -80,4 +80,4 @@ With specific bases such as base 90, there exists a link between all bases that 
   - 2 * 3 * 5 * 7 * 11 * 13 * 17 * 19 * 23 = 223092870;
   - 2 * 3 * 5 * 7 * 11 * 13 * 17 * 19 * 23 * 29 = 6469693230;
 ### Raw Inspection
-Here's the output of one of the runs: [Raw Output File](rawoutput.html)
+Here's the output of one of the runs: [Raw Output File](output.html)
